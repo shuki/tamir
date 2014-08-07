@@ -1,0 +1,28 @@
+.data{
+	border: solid 1px black;
+	padding: 4px;
+	border-collapse:collapse;
+}
+
+.data td{
+	border: 1px solid black;
+	padding:4px;
+}
+
+td.aggregate {
+	font-weight: bold;
+	background-color: #EAEAEA;
+}
+
+.data tr{
+	 background-color: #f7f7f7;
+}
+
+@media print{
+	form{
+		display:none
+	}
+	input{
+		display:none
+	}
+}
