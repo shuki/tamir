@@ -25,7 +25,9 @@ class config
 	const dberrorMode = PDO::ERRMODE_EXCEPTION;
 	const dbtime_zone = '+03:00'; // 'SYSTEM'
 	const limit = 100;
-	const upload_directory = '../tamir/uploads/';
+//	const upload_directory = '../tamir/uploads/';
+	const upload_directory = '../../uploads/';
+	const mysql_rel_path = '';
 	const hosts_table = 'jset_host';
 
 	const login = true;
