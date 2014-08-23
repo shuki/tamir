@@ -27,7 +27,6 @@ class tamir
 	
 	public static function create_patient_attendant($db, $id, $span)
 	{
-		//return $span == 1 ? $db->insert('INSERT IGNORE INTO `patient_attendant` (`parent`, `patient_id`, `attendant`) select ss.id, patient.id, 1 from patient, (select * from shift_summary where id = ?) ss where patient.house = ss.house', array($id)) : false;
 		return $span == 1 ? $db->insert('INSERT IGNORE INTO `patient_attendant` (`parent`, `patient_id`, `attendant`) select ss.id, v_patient.id, 1 from v_patient, (select * from shift_summary where id = ?) ss where v_patient.house = ss.house and v_patient.active = 1', array($id)) : false;
 	}
 	
@@ -62,5 +61,15 @@ class tamir
 	{	
 		$query = "UPDATE worker set `password` = AES_ENCRYPT(?,?) WHERE id = ? LIMIT 1";
 		return $db->exec($query, array(config::password_reset, config::encrypt_salt, $id));
+	}
+	
+	public static function delete_reporting_items($db, $id, $file){
+		$query = "select `file` from reporting WHERE id = ? LIMIT 1";
+		$db->query($query, array($id));
+		if($db->fetch()->file == $file)
+			return true;
+
+		$query = "delete from reporting_item WHERE parent = ?";
+		return $db->exec($query, array($id));
 	}
 }

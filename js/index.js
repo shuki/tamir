@@ -28,6 +28,14 @@ $(function(){
 	
 	set_panel_img_on_click_handler('div#tabs-5');
 
+	panel = $($('#panel_template').html()).appendTo($('div#tabs-7'))
+		.css({width:1098, float:'right'})
+		.addClass('rtl');
+	$('span.panel-title', panel).html('דיווח ממשרד הרווחה');
+	table = $('table[id="reporting_master_table"]').appendTo($('div.panel-body', panel));
+	
+	set_panel_img_on_click_handler('div#tabs-7');
+
 	$(window).bind('beforeunload', function(e){
 		if($("#timeout").hasClass('ui-dialog-content') && $("#timeout").dialog( "isOpen" ) === true)
 			return;
@@ -70,6 +78,7 @@ $(function(){
 		var medicine = $('table[id="medicine"]');
 		var psychiatric_diagnosis = $('table[id="psychiatric_diagnosis"]');
 		var medical = $('table[id="medical"]');
+		var reporting = $('table[id="reporting"]');
 		var report = $('table[id="report"]');
 		//switch(ui.index)
 		switch($(ui.panel).attr('id'))
@@ -133,6 +142,13 @@ $(function(){
 				else
 					if(medical.data('pending_reload'))
 						medical.jset('reload', [true]);
+			break;
+			case 'tabs-7':
+				if(!reporting.jset('defined'))
+					reporting.jset($.extend(true, {}, $.jset.defaults, $.jset.fn.getGridDefinition('reporting')));
+				else
+					if(reporting.data('pending_reload'))
+						reporting.jset('reload', [true]);
 			break;
 			case 'tabs-9':
 				if(!report.jset('defined'))

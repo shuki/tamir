@@ -29,6 +29,7 @@
 <script src="js/medicine.js" type="text/javascript"></script>
 <script src="js/psychiatric_diagnosis.js" type="text/javascript"></script>
 <script src="js/medical.js" type="text/javascript"></script>
+<script src="js/reporting.js" type="text/javascript"></script>
 <script src="js/report.js" type="text/javascript"></script>
 <script src="js/index.js" type="text/javascript"></script>
 </head>
@@ -49,6 +50,7 @@
 			<li><a href="#tabs-4">משמרות</a></li>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-5">שונות</a></li><?php } ?>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-6">רפואי</a></li><?php } ?>
+			<?php if($user_group == 1){ ?><li><a href="#tabs-7">דיווחים</a></li><?php } ?>
 			<?php if($user_group == 1){ ?><li><a href="#tabs-9">דוחות</a></li><?php } ?>
 		</ul>
 		<?php if($user_group != 4){ ?>
@@ -75,6 +77,20 @@
 		<?php } ?>
 		<div id="tabs-6">
 			<table id="medical" border="1"></table>
+		</div>
+		<div id="tabs-7">
+			<table id="reporting_master_table" style="width:98%">
+				<tr>
+					<td style="vertical-align:top">
+						<table id="reporting" border="1"></table>
+					</td>
+				</tr>
+				<tr>	
+					<td style="vertical-align:top">
+						<table id="reporting_item" border="1"></table>
+					</td>
+				</tr>
+			</table>
 		</div>
 		<div id="tabs-9">
 			<table id="report" border="1"></table>
