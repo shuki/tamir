@@ -25,9 +25,8 @@ class config
 	const dberrorMode = PDO::ERRMODE_EXCEPTION;
 	const dbtime_zone = '+03:00'; // 'SYSTEM'
 	const limit = 100;
-//	const upload_directory = '../tamir/uploads/';
 	const upload_directory = '../../uploads/';
-	const mysql_rel_path = '';
+	const mysql_rel_path = '../../uploads/';
 	const hosts_table = 'jset_host';
 
 	const login = true;
@@ -35,7 +34,7 @@ class config
 	const login_page = 'login.php';
 	const start_page = 'index.php';
 	const password_page = 'password.php';
-	const user_table = 'worker';
+	const user_table = 'v_worker_session';
 	const encrypt_salt = 't2H3';
 	const password_reset = '1234';
 	
@@ -49,5 +48,7 @@ class config
 	const join_list_suffix = '_jxlist';
 	const join_field_suffix = '_jxfield';
 	
-	const dbname_default = 'tamir';// for report
+	// for report
+	const dbname_default = 'tamir';
+	const tpl = 'page.tpl';
 }

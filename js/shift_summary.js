@@ -74,10 +74,10 @@ $.jset.fn.registerGridDefinition('shift_summary', {
 		}); */
 	},
 	beforeShowForm: function(formid){
-		fn_tamir.apply.call(this, formid);
+		fn_shift_summary.apply.call(this, formid);
 	},
 	afterclickPgButtons : function (whichbutton, formid, rowid){
-		fn_tamir.apply.call(this, formid);
+		fn_shift_summary.apply.call(this, formid);
 	},
 	afterSubmit: function(response, postdata){
 		//$('table[id="patient"]').jset('pending_reload');
@@ -119,3 +119,20 @@ $.jset.fn.registerGridDefinition('shift_summary', {
 		}
 	}
 });
+
+var fn_shift_summary = {
+	apply: function(formid){
+		var grid = $(this);
+		switch(user_attributes.group){
+			case '3':
+			case '4':
+				var worker_attendants = $($.jset.fn.get_form_field(formid, 'worker_attendants')).val();
+				var worker_attendants_array = worker_attendants.split(',');
+				var flag = $($.jset.fn.get_form_field(formid, 'creator')).val() != user_attributes.id && worker_attendants_array.indexOf(user_attributes.id) == -1;
+				$.jset.fn.readonlySet(grid, formid, flag);
+				break;
+			default:
+				;
+		}
+	}
+};
