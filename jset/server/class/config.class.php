@@ -10,7 +10,7 @@
 
 class config
 {
-	const version = '1.0.0';
+	const version = '1.0.8';
 	const jxset = '../jxset/';
 	const rel_path = '../../';
 	const dbhost = '127.0.0.1';
