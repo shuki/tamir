@@ -112,7 +112,7 @@ class report {
 		if($report->before_show)
 		{
 			$call = gen_utils::call_extract($report->before_show);
-			$res = call_user_func_array(array($call->class, $call->method), array($data));
+			$res = call_user_func_array(array($call->class, $call->method), array($this->db, $data));
 			if($res === false)
 				$this->error('unable to call the before show event - ', $report->before_show);
 			else 

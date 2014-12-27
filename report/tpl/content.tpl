@@ -106,7 +106,7 @@
 		
 		<th><!--a href="{$fulluri}&orderby=order by {$column_number-1}">^</a-->&nbsp; {$k} &nbsp;<!--a href="{$fulluri}&orderby=order by {$column_number-1} desc">v</a--></th> 
 	{foreachelse}
-		<th>No Data</th>
+		<th colspan="100">No Data</th>
 	{/foreach}
 	</tr>
 </thead>

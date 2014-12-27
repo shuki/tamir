@@ -14,7 +14,7 @@
 	
 	<th style="border: solid 1px black; border-collapse: collapse; padding: 4px; background-color: #dddddd;"><!--a href="{$fulluri}&orderby=order by {$column_number-1}">^</a-->&nbsp; {$k} &nbsp;<!--a href="{$fulluri}&orderby=order by {$column_number-1} desc">v</a--></th> 
 {foreachelse}
-	<th style="border: solid 1px black; border-collapse: collapse; padding: 4px; background-color: #dddddd;">No Data</th>
+	<th colspan="100" style="border: solid 1px black; border-collapse: collapse; padding: 4px; background-color: #dddddd;">No Data</th>
 {/foreach}
 </tr>
 
