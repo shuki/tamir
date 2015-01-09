@@ -74,14 +74,16 @@ $(function(){
 				},
 				editoptions:{
 					custom_options:{
-						row_height: '80',
-						max_width: '200',
-						browse_title: 'העלה קובץ',
-						delete_title: 'הסר קובץ',
-						show_image: false,
-						show_target: false,
-						show_link: false,
-						show_icon: true,
+						upload_file:{
+							row_height: '80',
+							max_width: '200',
+							browse_title: 'העלה קובץ',
+							delete_title: 'הסר קובץ',
+							show_image: false,
+							show_target: false,
+							show_link: false,
+							show_icon: true,
+						}
 					}
 				},
 				formoptions:{
