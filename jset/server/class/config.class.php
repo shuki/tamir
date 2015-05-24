@@ -23,7 +23,7 @@ class config
 	
 	const dbfetchStyle = PDO::FETCH_OBJ;
 	const dberrorMode = PDO::ERRMODE_EXCEPTION;
-	const dbtime_zone = '+03:00'; // 'SYSTEM'
+	//const dbtime_zone = '+03:00'; // 'SYSTEM'
 	const limit = 100;
 	const upload_directory = '../../uploads/';
 	const mysql_rel_path = '../../uploads/';
