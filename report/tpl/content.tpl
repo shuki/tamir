@@ -45,7 +45,10 @@
 			{if $parameters->interactive}
 			<tr style="display:none;"><td colspan="2"><input type="text" name="interactive"  value="1" /></td></tr> 
 			{/if}
-			<tr><td colspan="2"><input type="submit" value="הרץ דוח" /></td></tr>
+			<tr>
+				<td><input type="submit" value="הרץ דוח" /></td>
+				<td><input type="submit" value="יצא לאקסל" name="export"/></td>
+			</tr>
 			</table>
 			</form>	
 			

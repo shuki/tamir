@@ -36,6 +36,8 @@ class report {
 				header('Location: ' . $data->redirectURL);
 				exit;
 			}
+			else if($params['export'])
+				$this->export($data);
 			else
 				$this->display_page($data);
 		}else
@@ -270,6 +272,44 @@ class report {
 		$smarty->assign('tpl_name', "tpl/" . ($data->report->tpl ? $data->report->tpl : "content_table") . ".tpl");
 		//$message = $smarty->display("tpl/report.tpl");
 		$message = $smarty->display("tpl/" . (defined('config::tpl') ? config::tpl : "report.tpl"));
+	}
+	
+	private function export($data){
+		header('Content-disposition: attachment; filename=' . str_replace(array(' ', '\\', '/'), '-', $data->title) . '.csv');
+		header('Content-type: text/csv');
+		
+		foreach($data->data as $row){
+			if(!$titles){
+				foreach($row as $key => $value)
+					$titles .= '"'. str_replace('"', '""', iconv('UTF-8', config::export_charset_windows, $this->strip_html($key))) . '",';
+				$output .= substr($titles, 0, -1) . "\n";
+			}
+			
+			foreach($row as $key => $value)
+				$line .= '"'. str_replace('"', '""', iconv('UTF-8', config::export_charset_windows, $this->strip_html($value))) . '",';
+		
+			$output .= substr($line, 0, -1) . "\n";
+			$line = '';
+		}
+
+		foreach($data->aggregate as $row){
+			foreach($row as $key => $value)
+				$line .= '"'. str_replace('"', '""', iconv('UTF-8', config::export_charset_windows, $this->strip_html($value))) . '",';
+		
+			$output .= substr($line, 0, -1) . "\n";
+		}
+
+		$output = substr($output, 0, -1);
+
+		if($data->report->extra_data)
+			$output .= iconv('UTF-8', config::export_charset_windows, $data->report->extra_data);
+
+		echo $output;
+		return '';	
+	}
+
+	private function strip_html($value){
+		return htmlspecialchars_decode(strip_tags(str_replace(array('<br />', '&nbsp;', '&ndash;', '&mdash;'), array("\n", ' ', '-', '_'), $value)));
 	}
 
 	private function execute($db_name, $host, $sql, $error){
