@@ -64,10 +64,14 @@ $(function(){
 					location.reload();
 				}, $('#autoRefreshSeconds').val() * 1000);
 			}
+		},
+		print: function(){
+			window.print();
 		}
 	};
 	
 	$('#action_button').bind('click', fn.runActionList);
+	$('input[name="print"]').bind('click', fn.print);
 	
 	$('input:text').bind('keyup', fn.setBackground);
 	$('select').bind('change', fn.setBackground);

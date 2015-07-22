@@ -48,6 +48,7 @@
 			<tr>
 				<td><input type="submit" value="הרץ דוח" /></td>
 				<td><input type="submit" value="יצא לאקסל" name="export"/></td>
+				<td><input type="button" value="הדפס" name="print"/></td>
 			</tr>
 			</table>
 			</form>	
