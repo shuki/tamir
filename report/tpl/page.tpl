@@ -12,5 +12,6 @@
 <script src="js/reporting.js" type="text/javascript"></script>
 </head>
 <body dir="rtl">
-{include file="tpl/content.tpl"}
+{*include file="tpl/content.tpl"*}
+{include file="$tpl_name"}
 </body>
