@@ -34,7 +34,7 @@
 <script src="js/index.js" type="text/javascript"></script>
 </head>
 <body>
-	<div> <a href="login.php?signout"><img src="<?php echo $dir_pre ?>jset/img/out.png" title="צא"></a> <a href="<?php echo config::password_page; ?>"><?php echo $_SESSION['jset_user_login']; ?></a> שלום</div>
+	<div> <a href="login.php?signout"><img src="<?php echo $dir_pre ?>jset/img/power-black.png" title="צא"></a> <a href="<?php echo config::password_page; ?>"><?php echo $_SESSION['jset_user_login']; ?></a> שלום</div>
 	<?php if(!$user_group){ ?>
 		
 		<div style="direction:rtl; text-align:right">  יש להגדיר קבוצת הרשאה למשתמש <?php echo $_SESSION['jset_user_login']; ?> בכדי להשתמש במערכת. </div>
