@@ -2,7 +2,6 @@ $.jset.fn.registerGridDefinition('welfare_office', {
   	source: 'welfare_office',
   	item_name: 'לשכת רווחה',
 	load_edit_record: false,
-	persist:false,
 	template: {
 		use: true,
 		columns: 3

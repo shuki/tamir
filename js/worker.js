@@ -4,7 +4,6 @@ $.jset.fn.registerGridDefinition('worker', {
 	load_edit_record: false,
 	reopen_after_add: true,
 	spacing: '10px',
-	persist:false,
 	template: {
 		use: true,
 		columns: 3

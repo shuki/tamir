@@ -89,9 +89,9 @@ $(function(){
 				}
 			}
 		},
-		persist: false,
+		persist: true,
 		clearPersist: {
-			navButtonAdd: false
+			navButtonAdd: true
 		},
 		clearFilterToolbar:{
 			navButtonAdd: true,
@@ -111,6 +111,9 @@ $(function(){
 				position: 'last'
 			},
 			associative:'both'
+		},
+		'import':{
+			navButtonAdd: user_attributes.group == 1
 		},
 		help:{
 			hide: false,
