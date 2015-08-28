@@ -46,9 +46,7 @@
 			<tr style="display:none;"><td colspan="2"><input type="text" name="interactive"  value="1" /></td></tr> 
 			{/if}
 			<tr>
-				<td><input type="submit" value="הרץ דוח" /></td>
-				<td><input type="submit" value="יצא לאקסל" name="export"/></td>
-				<td><input type="button" value="הדפס" name="print"/></td>
+				<td colspan=10"><input type="submit" value="הרץ דוח" /> <input type="submit" value="יצא לאקסל" name="export"/> <input type="button" value="הדפס" name="print"/></td>
 			</tr>
 			</table>
 			</form>	
