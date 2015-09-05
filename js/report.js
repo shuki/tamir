@@ -72,6 +72,8 @@ $.jset.fn.registerGridDefinition('report', {
 	beforeRequest: function(){
 	},
     grid: {
+	    sortname: 'name',
+	    sortorder: 'asc',
     	width:500
   	},
   	navigation:{
