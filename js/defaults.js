@@ -115,6 +115,24 @@ $(function(){
 		'import':{
 			navButtonAdd: user_attributes.group == 1
 		},
+		copy:{
+			navButtonAdd: true,
+			confirm: true,
+			showFormInit: null,
+			properties: {
+				closeAfterAdd: true,
+				editCaption: $.jset.nav.copyCaption,
+				viewPagerButtons: false,
+				onclickSubmit: $.jset.fn.onclickSubmit
+			},
+			clear_id: true,
+			options: {
+				caption: '',
+				title: $.jset.nav.copy,
+				buttonicon: 'ui-icon-copy',
+				position: 'first'
+			}
+		},
 		help:{
 			hide: false,
 			navButtonAdd: false,
