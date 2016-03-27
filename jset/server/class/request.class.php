@@ -10,6 +10,7 @@ class request
 				case 'shift_summary':
 				case 'school':
 				case 'medical':
+				case 'worker':
 					$request['_section_'] = 1;
 					break;
 				default:

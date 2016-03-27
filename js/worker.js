@@ -108,7 +108,7 @@ $.jset.fn.registerGridDefinition('worker', {
   	},
   	navigation:{
 		options : {
-			add: user_attributes.group == 1,
+			add: user_attributes.group <= 2,
 			del: user_attributes.group == 1,
 			search: true,
 			view: false

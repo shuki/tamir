@@ -46,7 +46,7 @@
 		<ul>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-1">חניכים</a></li><?php } ?>
 			<?php if($user_group <= 2){ ?><li><a href="#tabs-2">מסגרות</a></li><?php } ?>
-			<?php if($user_group == 1){ ?><li><a href="#tabs-3">עובדים</a></li><?php } ?>
+			<?php if($user_group <= 2){ ?><li><a href="#tabs-3">עובדים</a></li><?php } ?>
 			<li><a href="#tabs-4">משמרות</a></li>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-5">שונות</a></li><?php } ?>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-6">רפואי</a></li><?php } ?>

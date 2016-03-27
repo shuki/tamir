@@ -28,13 +28,15 @@ $(function(){
 	
 	set_panel_img_on_click_handler('div#tabs-5');
 
-	panel = $($('#panel_template').html()).appendTo($('div#tabs-7'))
-		.css({width:1098, float:'right'})
-		.addClass('rtl');
-	$('span.panel-title', panel).html('דיווח ממשרד הרווחה');
-	table = $('table[id="reporting_master_table"]').appendTo($('div.panel-body', panel));
-	
-	set_panel_img_on_click_handler('div#tabs-7');
+	if(user_attributes.group == 1){
+		panel = $($('#panel_template').html()).appendTo($('div#tabs-7'))
+			.css({width:1098, float:'right'})
+			.addClass('rtl');
+		$('span.panel-title', panel).html('דיווח ממשרד הרווחה');
+		table = $('table[id="reporting_master_table"]').appendTo($('div.panel-body', panel));
+		
+		set_panel_img_on_click_handler('div#tabs-7');
+	}
 
 	$(window).bind('beforeunload', function(e){
 		if($("#timeout").hasClass('ui-dialog-content') && $("#timeout").dialog( "isOpen" ) === true)
