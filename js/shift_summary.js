@@ -124,6 +124,9 @@ var fn_shift_summary = {
 		var grid = $(this);
 		switch(user_attributes.group){
 			case '3':
+				var flag = $($.jset.fn.get_form_field(formid, 'house')).val() != user_attributes.house;
+				$.jset.fn.readonlySet(grid, formid, flag);
+				break;
 			case '4':
 				var worker_attendants = $($.jset.fn.get_form_field(formid, 'worker_attendants')).val();
 				var worker_attendants_array = worker_attendants.split(',');

@@ -149,7 +149,7 @@ $(function(){
 	  	navigation:{
 			options : {
 				del: user_attributes.group == 1,
-				search: false,
+				search: true,
 				view: false
 			},
 			edit:{

@@ -80,6 +80,7 @@ $(function(){
 		var medicine = $('table[id="medicine"]');
 		var psychiatric_diagnosis = $('table[id="psychiatric_diagnosis"]');
 		var medical = $('table[id="medical"]');
+		var exceptional_event_main = $('table[id="exceptional_event_main"]');
 		var reporting = $('table[id="reporting"]');
 		var report = $('table[id="report"]');
 		//switch(ui.index)
@@ -144,6 +145,13 @@ $(function(){
 				else
 					if(medical.data('pending_reload'))
 						medical.jset('reload', [true]);
+			break;
+			case 'tabs-8':
+				if(!exceptional_event_main.jset('defined'))
+					exceptional_event_main.jset($.extend(true, {}, $.jset.defaults, $.jset.fn.getGridDefinition('exceptional_event_main')));
+				else
+					if(exceptional_event_main.data('pending_reload'))
+						exceptional_event_main.jset('reload', [true]);
 			break;
 			case 'tabs-7':
 				if(!reporting.jset('defined'))

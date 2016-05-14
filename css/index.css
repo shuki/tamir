@@ -30,3 +30,24 @@ div#editmodcontact .ui-jqdialog-content .DataTD
 div#editmodcontact .FormGrid tr.FormData{
 	background-color: #CCFFFF;
 }
+
+.jset-grid-container {
+    padding: 0px;
+}
+
+.CaptionField {
+	color: #2E6E9E;
+	vertical-align:middle;
+        font:arial;
+	font-size:1.1em;
+	font-weight:600;
+	padding: 0px 2px 0px 2px;
+	white-space: nowrap;
+	/* border-top: 1px solid #A6C9E2; */
+}
+
+.ui-widget select, .ui-widget textarea, .ui-widget button {
+    font-family: Arial;
+    font-size: 1.1em;
+}
+

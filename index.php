@@ -17,7 +17,7 @@
 <script src="<?php echo $dir_pre ?>jset/i18n/grid.locale-he.js" type="text/javascript"></script>
 <title>תמיר - תיעוד , מעקב, ייעול, רישום</title>
 <script type="text/javascript">
-	<?php echo jset_permission::get_user_attributes_js(); ?>
+	<?php echo jset_permission::get_user_attributes_js(array('dormitory','house')); ?>
 </script>
 <script src="js/defaults.js" type="text/javascript"></script>
 <script src="js/patient.js" type="text/javascript"></script>
@@ -50,6 +50,7 @@
 			<li><a href="#tabs-4">משמרות</a></li>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-5">שונות</a></li><?php } ?>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-6">רפואי</a></li><?php } ?>
+			<?php if($user_group != 4){ ?><li><a href="#tabs-8">אירועים חריגים</a></li><?php } ?>
 			<?php if($user_group == 1){ ?><li><a href="#tabs-7">דיווחים</a></li><?php } ?>
 			<?php if($user_group == 1){ ?><li><a href="#tabs-9">דוחות</a></li><?php } ?>
 		</ul>
@@ -77,6 +78,9 @@
 		<?php } ?>
 		<div id="tabs-6">
 			<table id="medical" border="1"></table>
+		</div>
+		<div id="tabs-8">
+			<table id="exceptional_event_main" border="1"></table>
 		</div>
 		<div id="tabs-7">
 			<table id="reporting_master_table" style="width:98%">
