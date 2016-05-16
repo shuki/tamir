@@ -12,6 +12,8 @@ class request
 				case 'medical':
 				case 'worker':
 				case 'exceptional_event_main':
+				case 'exceptional_event_involved_main':
+				case 'exceptional_event_worker_main':
 					$request['_section_'] = 1;
 					break;
 				default:
