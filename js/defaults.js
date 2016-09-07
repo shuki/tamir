@@ -10,8 +10,8 @@ $(function(){
 			language : 'he_IL',
 			menubar : false,
 			//toolbar: 'fontselect fontsizeselect bold italic underline forecolor backcolor alignleft aligncenter alignright bullist numlist outdent indent blockquote removeformat',
-			toolbar: 'fullscreen print preview fontsizeselect bold italic underline forecolor backcolor alignleft aligncenter alignright bullist numlist outdent indent blockquote removeformat',
-			plugins : 'textcolor fullscreen print preview'
+			toolbar: 'print preview fontsizeselect bold italic underline forecolor backcolor alignleft aligncenter alignright bullist numlist outdent indent blockquote removeformat',
+			plugins : 'textcolor print preview'
 /*			  plugins: [
 			            'advlist autolink lists link image charmap print preview hr anchor pagebreak',
 			            'searchreplace wordcount visualblocks visualchars code fullscreen',
