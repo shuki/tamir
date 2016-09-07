@@ -10,10 +10,17 @@ $(function(){
 			language : 'he_IL',
 			menubar : false,
 			//toolbar: 'fontselect fontsizeselect bold italic underline forecolor backcolor alignleft aligncenter alignright bullist numlist outdent indent blockquote removeformat',
-			toolbar: 'fontsizeselect bold italic underline forecolor backcolor alignleft aligncenter alignright bullist numlist outdent indent blockquote removeformat',
-			plugins : 'textcolor'
-
-
+			toolbar: 'fullscreen print preview fontsizeselect bold italic underline forecolor backcolor alignleft aligncenter alignright bullist numlist outdent indent blockquote removeformat',
+			plugins : 'textcolor fullscreen print preview'
+/*			  plugins: [
+			            'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+			            'searchreplace wordcount visualblocks visualchars code fullscreen',
+			            'insertdatetime media nonbreaking save table contextmenu directionality',
+			            'emoticons template paste textcolor colorpicker textpattern imagetools'
+			          ],
+			          //toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+			          toolbar: 'print preview media | forecolor backcolor emoticons'
+*/
 		},
 		control:{
 			align: 'right',
