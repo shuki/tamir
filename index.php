@@ -17,7 +17,7 @@
 <script src="<?php echo $dir_pre ?>jset/i18n/grid.locale-he.js" type="text/javascript"></script>
 <title>תמיר - תיעוד , מעקב, ייעול, רישום</title>
 <script type="text/javascript">
-	<?php echo jset_permission::get_user_attributes_js(array('dormitory','house')); ?>
+	<?php echo jset_permission::get_user_attributes_js(array('first_name', 'surename', 'dormitory', 'house', 'document_header')); ?>
 </script>
 <script src="js/defaults.js" type="text/javascript"></script>
 <script src="js/patient.js" type="text/javascript"></script>
@@ -42,6 +42,7 @@
 	<?php 
 		die;
 	}	?>
+
 	<div id="tabs">
 		<ul>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-1">חניכים</a></li><?php } ?>
