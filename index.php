@@ -8,6 +8,7 @@
  */
  include_once("autoload.php");
  $dir_pre = config::jxset;
+ $jset_payment = jset_payment::process();
  jset_session::create();
  jset_page::create(config::jxset, 'he', '', true);
  $user_group = $_SESSION['jset_user_group'];
@@ -32,6 +33,7 @@
 <script src="js/reporting.js" type="text/javascript"></script>
 <script src="js/report.js" type="text/javascript"></script>
 <script src="js/index.js" type="text/javascript"></script>
+<?php jset_payment::alert_script(); ?>
 </head>
 <body>
 	<div> <a href="login.php?signout"><img src="<?php echo $dir_pre ?>jset/img/power-black.png" title="צא"></a> <a href="<?php echo config::password_page; ?>"><?php echo $_SESSION['jset_user_login']; ?></a> שלום</div>
@@ -54,7 +56,8 @@
 			<?php if($user_group <= 3){ ?><li><a href="#tabs-8">אירועים חריגים</a></li><?php } ?>
 			<?php if($user_group == 1){ ?><li><a href="#tabs-7">דיווחים</a></li><?php } ?>
 			<?php if($user_group == 1){ ?><li><a href="#tabs-9">דוחות</a></li><?php } ?>
-		</ul>
+			<?php if($user_group == 1) jset_payment::payment_li($jset_payment); ?>
+			</ul>
 		<?php if($user_group != 4){ ?>
 		<div id="tabs-1">
 			<table id="patient" border="1"></table>
@@ -100,6 +103,7 @@
 		<div id="tabs-9">
 			<table id="report" border="1"></table>
 		</div>
+		<?php jset_payment::payment_div($jset_payment); ?>
 	</div>
 </body>
 </html>
