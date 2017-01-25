@@ -28,7 +28,7 @@ jset_page::min(config::jxset, $language, '', $rtl);
 <script src="js/password.js" type="text/javascript"></script>
 </head>
 <body>
-	<div id="headstrip"><a href="login.php?signout"><img src="<?php echo $dir_pre ?>jset/img/out.png" title="<?php echo $lang['logout'] ?>"></a> <?php echo $_SESSION['jset_user_login']; ?> <?php echo $lang['hi'] ?> <span class="headstrip" ><a href="<?php echo (!$_SERVER['HTTP_REFERER'] || strstr($_SERVER['HTTP_REFERER'], config::password_page)) ? config::start_page :  $_SERVER['HTTP_REFERER']; ?>"><?php echo $lang['back'] ?></a></span></div>
+	<div id="headstrip"><a href="login.php?signout"><img src="<?php echo $dir_pre ?>jset/img/power-black.png" title="<?php echo $lang['logout'] ?>"></a> <?php echo $_SESSION['jset_user_login']; ?> <?php echo $lang['hi'] ?> <span class="headstrip" ><a href="<?php echo (!$_SERVER['HTTP_REFERER'] || strstr($_SERVER['HTTP_REFERER'], config::password_page)) ? config::start_page :  $_SERVER['HTTP_REFERER']; ?>"><?php echo $lang['back'] ?></a></span></div>
 	<div style="width:100%; margin-top:10px">	
 		<div style="width:30%; margin: 0 auto;">
 			<form action="<?php echo config::password_page; ?>" method="post" target="_self"> 
