@@ -123,18 +123,29 @@ var fn_shift_summary = {
 	apply: function(formid){
 		var grid = $(this);
 		switch(user_attributes.group){
-			case '3':
-				var flag = $($.jset.fn.get_form_field(formid, 'house')).val() != user_attributes.house;
-				$.jset.fn.readonlySet(grid, formid, flag);
+			case '3':				
+				if($.jset.fn.get_form_field(formid, 'creator').val() == user_attributes.id || $.jset.fn.get_form_field(formid, 'house').val() == user_attributes.house)
+					$.jset.fn.readonlySet(grid, formid, false);
+				else
+					fn_shift_summary.check_if_attendant(formid, grid);
 				break;
 			case '4':
-				var worker_attendants = $($.jset.fn.get_form_field(formid, 'worker_attendants')).val();
-				var worker_attendants_array = worker_attendants.split(',');
-				var flag = $($.jset.fn.get_form_field(formid, 'creator')).val() != user_attributes.id && worker_attendants_array.indexOf(user_attributes.id) == -1;
-				$.jset.fn.readonlySet(grid, formid, flag);
+				if($.jset.fn.get_form_field(formid, 'creator').val() == user_attributes.id)
+					$.jset.fn.readonlySet(grid, formid, false);
+				else
+					fn_shift_summary.check_if_attendant(formid, grid);
 				break;
 			default:
 				;
 		}
+	},
+	check_if_attendant: function(formid, grid){
+		$.jset.fn.readonlySet(grid, formid, true);
+		$.jset.fn.get_rows(grid, 
+			"select count(*) as worker_attendant, parent from worker_attendant where parent = '" + $.jset.fn.get_form_field(formid, 'id').val() + "' and worker_id = '" + user_attributes.id + "'",
+			 function(data){
+				if(data.length && data[0].worker_attendant && data[0].parent == $.jset.fn.get_form_field(formid, 'id').val())
+					$.jset.fn.readonlySet(grid, formid, false);
+		});
 	}
 };
