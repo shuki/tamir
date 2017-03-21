@@ -47,6 +47,7 @@
 
 	<div id="tabs">
 		<ul>
+			<li><a href="#tabs-0">בית</a>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-1">חניכים</a></li><?php } ?>
 			<?php if($user_group <= 2){ ?><li><a href="#tabs-2">מסגרות</a></li><?php } ?>
 			<?php if($user_group <= 2){ ?><li><a href="#tabs-3">עובדים</a></li><?php } ?>
@@ -59,6 +60,11 @@
 			<?php if($user_group == 1) jset_payment::payment_li($jset_payment); ?>
 			</ul>
 		<?php if($user_group != 4){ ?>
+		<div style="width:100%; margin-top:10px; text-align: center" id="tabs-0">
+			<h1 style="color:green;">מערכת תמיר</h1>
+			<img src="<?php echo $dir_pre ?>jset/img/jxset.jpg"/>
+			<div>תמיכה: <a href="mailto:shukrun.shuki@gmail.com?Subject=מערכת%20תמיר" target="_blank">shukrun.shuki@gmail.com</a></div>
+		</div>
 		<div id="tabs-1">
 			<table id="patient" border="1"></table>
 		</div>
