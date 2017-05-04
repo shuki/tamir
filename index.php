@@ -56,7 +56,7 @@
 			<?php if($user_group != 4){ ?><li><a href="#tabs-6">רפואי</a></li><?php } ?>
 			<?php if($user_group <= 3){ ?><li><a href="#tabs-8">אירועים חריגים</a></li><?php } ?>
 			<?php if($user_group == 1){ ?><li><a href="#tabs-7">דיווחים</a></li><?php } ?>
-			<?php if($user_group == 1){ ?><li><a href="#tabs-9">דוחות</a></li><?php } ?>
+			<?php if($user_group <= 3){ ?><li><a href="#tabs-9">דוחות</a></li><?php } ?>
 			<?php if($user_group == 1) jset_payment::payment_li($jset_payment); ?>
 			</ul>
 		<?php if($user_group != 4){ ?>

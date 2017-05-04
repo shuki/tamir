@@ -9,6 +9,7 @@ class request
 				case 'patient':
 				case 'shift_summary':
 				case 'school':
+				case 'report':
 				case 'medical':
 				case 'worker':
 				case 'exceptional_event_main':
