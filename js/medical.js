@@ -5,7 +5,7 @@ $.jset.fn.registerGridDefinition('medical', {
 	persist:false,
 	template: {
 		use: true,
-		columns: 3
+		columns: user_attributes.group == 3 ? 1 : 3
 	},
 	filterToolbar:{
 		hide: false,
@@ -25,10 +25,8 @@ $.jset.fn.registerGridDefinition('medical', {
 			$.jset.fn.append_fields_td(formid, 'dormitory', 1);
 	},
 	beforeShowForm: function(formid){
-		fn_tamir.apply.call(this, formid);
 	},
 	afterclickPgButtons : function (whichbutton, formid, rowid){
-		fn_tamir.apply.call(this, formid);
 	},
 	afterSubmit: function(response, postdata){
 		//$('table.jset_table[id="patient"]').jset('pending_reload');

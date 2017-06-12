@@ -150,7 +150,7 @@ $(function(){
 	    grid: {
 	    	direction: 'rtl',
 		    width: $(window).width() - 24,
-		    height: $(window).height() - 135,
+		    height: $(window).height() - 150,
 			rownumWidth: 30
 	  	},
 	  	navigation:{
