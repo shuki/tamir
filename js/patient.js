@@ -24,55 +24,13 @@ $(function(){
 		},
 		help:{
 			hide: false,
-			navButtonAdd: true,
-			dialog: {
-				autoOpen: false,
-				title: 'הסבר',
-				width: 600,
-				position: 'top'
-			},
-			options: {
-				caption:'',
-				title:'הסבר', 
-				buttonicon :'ui-icon-lightbulb', 
-				position: 'last'
-			}
+			navButtonAdd: true
 		},
 		columnChooser:{
-			navButtonAdd: true,
-			multiselect:{
-			    locale: {
-			        addAll: 'הצג את כל העמודות',
-			        removeAll: 'הסתר את כל העמודות',
-			        itemsCount: 'עמודות מוצגות'
-			    }
-			},
-			col:{
-			    width: 420,
-			    modal: true,
-			    msel_opts: {dividerLocation: 0.5},
-			    dialog_opts: {
-			        minWidth: 470,
-			        minHeight: 370,
-			        show: 'blind',
-			        hide: 'explode'
-			    }
-			}
+			navButtonAdd: true
 		},
 		clearPersist: {
-			navButtonAdd: true,
-			options: {
-			    caption: "",
-			    buttonicon: "ui-icon-closethick",
-			    title: $.jset.nav.clearPersistTitle,
-			    onClickButton: function () {
-			    	grid = $(this);
-			    	$.jset.fn.storeFilterToolbar.call(grid);
-			        $.jset.fn.removeObjectFromLocalStorage($.jset.fn.myColumnStateName(grid));
-			        grid.jset('reload');
-			        //localStorage.clear();
-			    }
-			}				
+			navButtonAdd: true
 		},
 		onInitializeForm: function(formid){
 			var grid = $(this);
