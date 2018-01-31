@@ -7,7 +7,7 @@ $q = "select id, name, email
 from v_worker
 where v_worker.`group` = 1
 and email is not null";
-
+/*
 $qreports = "select *
 from report
 where id = 36";
@@ -35,23 +35,38 @@ foreach($reports as $report){
 }
 
 var_dump($results);
+*/
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_URL, 'http://localhost/tamir/report/?reportId=36&nobuttons=1');
-$body = curl_exec($ch);
+curl_setopt($ch,CURLOPT_SSL_VERIFYPEER, false);
+//curl_setopt($ch, CURLOPT_URL, 'http://localhost/tamir/report/?reportId=1&contentsonly=1');
+curl_setopt($ch, CURLOPT_URL, 'https://secure.jxset.org/tamir/report/?reportId=37&contentsonly=1');
+$string = curl_exec($ch);
+$pos = strpos($string, '<th colspan="100">No Data</th>');
+if($pos === false)
+	$body .= string;
+
+curl_setopt($ch, CURLOPT_URL, 'https://secure.jxset.org/tamir/report/?reportId=36&contentsonly=1');
+$string = curl_exec($ch);
+$pos = strpos($string, '<th colspan="100">No Data</th>');
+if($pos === false)
+	$body .= string;
+
 curl_close($ch);
 echo $body;
-$params->From = 'shukrun.shuki@gmail.com';
-$params->Reply = 'shukrun.shuki@gmail.com';
-$result = mailer::mail('shukrun.shuki@gmail.com','=?UTF-8?B?'.base64_encode('testing reports').'?=', $body, null, $params);
+$params->From = 'tamir@guy.org.il';
+$params->Reply = 'tamir@guy.org.il';
+$result = mailer::mail('shukrun.shuki@gmail.com','=?UTF-8?B?'.base64_encode('דיווח יומי').'?=', $body, null, $params);
 var_dump($result);
 die;
+
+
 $params = new stdClass;
 foreach($mail_messages as $mail_message){
 	echo date("d/m/Y H:i:s") . ' ';
 	$body = str_replace(array('#NAME#', '#CODE#', '#FOLDER#', '#SUPPORT_EMAIL#'), array($mail_message->name, ($mail_message->submitted ? substr($mail_message->code, 0, 10) : $mail_message->code), $mail_message->folder, $mail_message->support_email), $mail_message->email_body);
-	$type = ($mail_message->submitted ? 2 : 1);
+	$type = ($mail_message->submitted ? 2 : 1); 
 
 	$params->From = $mail_message->support_email;
 	$params->Reply = $mail_message->support_email;
