@@ -18,7 +18,6 @@ class request
 				case 'dormitory':
 				case 'shift_summary':
 				case 'school':
-				case 'report':
 				case 'worker':
 				case 'exceptional_event_main':
 				case 'exceptional_event_involved_main':

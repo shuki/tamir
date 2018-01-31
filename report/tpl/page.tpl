@@ -7,7 +7,10 @@
 <META HTTP-EQUIV="EXPIRES" CONTENT="-1"/>
 <link rel="shortcut icon" href="../../jxset/jset/img/smile.gif" type="image/x-icon" />
 <title>{if $error}Error in report{else}{$title}{/if}</title>
-<link rel="stylesheet" type="text/css" media="all" href="css/style.css" />
+<!--link rel="stylesheet" type="text/css" media="all" href="css/style.css" /-->
+<style>
+{include file="css/style.css"}
+</style>
 <script src="../../jxset/jset/jquery/jquery-1.8.2.min.js" type="text/javascript"></script>
 <script src="js/reporting.js" type="text/javascript"></script>
 </head>
