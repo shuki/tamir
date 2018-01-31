@@ -36,7 +36,7 @@ foreach($reports as $report){
 
 var_dump($results);
 */
-
+$body = '';
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch,CURLOPT_SSL_VERIFYPEER, false);
@@ -45,20 +45,20 @@ curl_setopt($ch, CURLOPT_URL, 'https://secure.jxset.org/tamir/report/?reportId=3
 $string = curl_exec($ch);
 $pos = strpos($string, '<th colspan="100">No Data</th>');
 if($pos === false)
-	$body .= string;
-
+	$body .= $string;
+/*
 curl_setopt($ch, CURLOPT_URL, 'https://secure.jxset.org/tamir/report/?reportId=36&contentsonly=1');
 $string = curl_exec($ch);
 $pos = strpos($string, '<th colspan="100">No Data</th>');
 if($pos === false)
-	$body .= string;
-
+	$body .= $string;
+*/
 curl_close($ch);
 echo $body;
 $params->From = 'tamir@guy.org.il';
 $params->Reply = 'tamir@guy.org.il';
-$result = mailer::mail('shukrun.shuki@gmail.com','=?UTF-8?B?'.base64_encode('דיווח יומי').'?=', $body, null, $params);
-var_dump($result);
+//$result = mailer::mail('shukrun.shuki@gmail.com','=?UTF-8?B?'.base64_encode('דיווח יומי').'?=', $body, null, $params);
+//var_dump($result);
 die;
 
 
