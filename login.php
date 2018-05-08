@@ -49,7 +49,7 @@ jset_page::min(config::jxset, $language, '', $rtl);
 					</tr>
 					<tr style="display: table-row;">
 						<td></td>
-						<td><input type="submit" value="<?php echo $lang['submit'] ?>"  disabled="disabled"></td>
+						<td><input type="submit" value="<?php echo $lang['submit'] ?>" ></td>
 					</tr>
 					<tr>
 						<td colspan="2" style="text-align:center; color:red;"><?php echo ($success === false ? $lang['not_valid'] : ''); ?></td>
