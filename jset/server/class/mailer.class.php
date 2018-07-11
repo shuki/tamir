@@ -62,6 +62,10 @@ class mailer
 		//Set who the message is to be sent to
 		$mail->addAddress($to, $to);
 		
+		//add cc
+		if($params->CC)
+			$mail->AddCC($params->CC);
+		
 		//Set the subject line
 		$mail->Subject = $subject;
 		
@@ -75,7 +79,7 @@ class mailer
 		
 		//Attach a file
 		if($attachment)
-			$mail->addAttachment('../../'. $attachment);
+			$mail->addAttachment($attachment);
 		
 		//send the message, check for errors
 		$result = new stdClass;
