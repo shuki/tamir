@@ -1,0 +1,11 @@
+Options +FollowSymLinks
+RewriteEngine On
+# pass-through if another rewrite rule has been applied already
+RewriteCond %{ENV:REDIRECT_STATUS} 200
+RewriteRule ^ - [L]
+
+#RewriteBase /
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{QUERY_STRING} ^(.+)$
+RewriteRule ^files/(.+)$ /tamir/jset/server/get_file.php?filename=$1 [L]
