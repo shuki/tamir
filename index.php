@@ -53,6 +53,7 @@
 			<?php if($user_group <= 2){ ?><li><a href="#tabs-3">עובדים</a></li><?php } ?>
 			<li><a href="#tabs-4">משמרות</a></li>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-5">שונות</a></li><?php } ?>
+			<?php if($user_group != 4){ ?><li><a href="#tabs-10">מטפלים בקהילה</a></li><?php } ?>
 			<?php if($user_group != 4){ ?><li><a href="#tabs-6">רפואי</a></li><?php } ?>
 			<?php if($user_group <= 3){ ?><li><a href="#tabs-8">אירועים חריגים</a></li><?php } ?>
 			<?php if($user_group == 1){ ?><li><a href="#tabs-7">דיווחים</a></li><?php } ?>
@@ -74,6 +75,9 @@
 		</div>
 		<div id="tabs-3">
 			<table id="worker" border="1"></table>
+		</div>
+		<div id="tabs-10">
+			<table id="external_worker_main" border="1"></table>
 		</div>
 		<div id="tabs-4">
 			<table id="shift_summary" border="1"></table>

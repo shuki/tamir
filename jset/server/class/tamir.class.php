@@ -72,4 +72,16 @@ class tamir
 		$query = "delete from reporting_item WHERE parent = ?";
 		return $db->exec($query, array($id));
 	}
+	
+	public static function check_external_worker_references($db, $id){
+		$query = "select count(*) as result from patient WHERE social_official = ? OR social_worker_community = ?";
+		$db->query($query, array($id, $id));
+		if($db->fetch()->result){
+			$result = new stdClass();
+			$result->error = new stdClass();
+			$result->error->message = 'לא ניתן להסיר את המטפל/ת בשלב זה, מכיוון שמופיע כמטפל/ת אצל חניך/ים';
+			return $result;
+		}
+		return true;
+	}
 }

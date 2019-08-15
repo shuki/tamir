@@ -74,6 +74,7 @@ $(function(){
 		var patient = $('table[id="patient"]');
 		var dormitory = $('table[id="dormitory"]');
 		var worker = $('table[id="worker"]');
+		var external_worker_main = $('table[id="external_worker_main"]');
 		var shift_summary = $('table[id="shift_summary"]');
 		var school = $('table[id="school"]');
 		var welfare_office = $('table[id="welfare_office"]');
@@ -163,6 +164,13 @@ $(function(){
 			case 'tabs-9':
 				if(!report.jset('defined'))
 					report.jset($.extend(true, {}, $.jset.defaults, $.jset.fn.getGridDefinition('report')));
+			break;
+			case 'tabs-10':
+				if(!external_worker_main.jset('defined'))
+					external_worker_main.jset($.extend(true, {}, $.jset.defaults, $.jset.fn.getGridDefinition('external_worker_main')));
+				else
+					if(external_worker_main.data('pending_reload'))
+						external_worker_main.jset('reload', [true]);
 			break;
 			default:
 		}
