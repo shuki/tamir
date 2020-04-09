@@ -4,4 +4,11 @@ RewriteEngine On
 RewriteCond %{ENV:REDIRECT_STATUS} 200
 RewriteRule ^ - [L]
 
-#RewriteRule ^files/(.+)$ /tamir/jset/server/get_file.php?filename=$1 [L]
+RewriteBase /
+ 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond $0#%{REQUEST_URI} ([^#]*)#(.*)\1$
+RewriteRule ^files/(.+)$ /%2/jset/server/get_file.php?filename=$1 [L]
+
+
+
